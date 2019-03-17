@@ -20,6 +20,9 @@ namespace WpfApplication1
     /// <summary>
     /// MainWindow.xaml 的互動邏輯
     /// </summary>
+    // async/await 當method宣告標示async時，表示此為非同步method，傳回值為void、Task、Task<TResult>
+    // 其中Task型別為即時傳回，TResult則是等執行到await時才會取得，await即時會suspend目前Thread，等待
+    // 之前呼叫的Task的傳回值TResult
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -30,7 +33,7 @@ namespace WpfApplication1
         // 加入 async
         private async void Start_Click(object sender, RoutedEventArgs e)
         {
-            //AccessUrlForNet4Async();
+            AccessUrlForNet4Async();
             //AccessUrlForNet5Async();
 
             // 注意，此行程式碼未進行錯誤處理。
