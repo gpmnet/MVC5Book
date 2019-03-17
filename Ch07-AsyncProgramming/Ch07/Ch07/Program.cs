@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using CH07;
+
 
 namespace Ch07
 {
+    //僅包含一條主執行緒被稱為安全執行緒(thread-safe)
+    //單核處理器，作業系統廠會分配片段時間給執行緒執行(約20ms)
+    //Task類別中Run method為執行Thread,傳回值為Task或Task<T>，其中<T>可透過Result屬性取得
+    //，Wait為封鎖Thread往下執行，直到Task完成
+    //ContinueWith及GetAwaiter()是可以實作Task完成時呼叫的Method(所謂接續工作，Continuation)
     class Program
     {
         static void Main(string[] args)
@@ -34,43 +42,43 @@ namespace Ch07
             //  Console.ReadLine();
 
             // 範例四
-            //sample.new10Thread();
+//            sample.new10Thread();
 
             // 範例五
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    sample.new10Thread(i);
-            //}
-            //Console.ReadLine();
+//            for (int i = 0; i < 10; i++)
+//            {
+//                sample.new10Thread(i);
+//            }
+//            Console.ReadLine();
 
-            // 範例六
-            //  // 建立新執行緒
-            //  Thread t = new Thread(sample.Write1To50);
-            //  // 啟動執行緒
-            //  t.Start();
-            //  // 主執行緒暫停1秒
-            //  Thread.Sleep(1000);
-            //  sample.Write51To100();
-            //  Console.ReadLine();
+//             範例六
+//              // 建立新執行緒
+//              Thread t = new Thread(sample.Write1To50);
+//              // 啟動執行緒
+//              t.Start();
+//              // 主執行緒暫停1秒
+//              Thread.Sleep(1000);
+//              sample.Write51To100();
+//              Console.ReadLine();
 
             // 範例七
             // Task.Run(() => Console.WriteLine("From Task."));
             // Console.ReadLine();
 
             // 範例八
-            //sample.TaskRun1();
+//            sample.TaskRun1();
 
             // 範例九
-            //sample.TaskRun2();
+//            sample.TaskRun2();
 
             // 範例十
             //sample.TaskRun3();
 
             // 範例十一
-            //sample.ContinueWith();
+//            sample.ContinueWith();
 
             // 範例十二
-            // sample.Awaiter();
+//             sample.Awaiter();
 
             // 範例十三
             //sample.TaskDelayContinueWith();
@@ -82,7 +90,7 @@ namespace Ch07
             //sample.ParallelFor();
 
             // 範例十六
-            //sample.ParallelForEach();
+            sample.ParallelForEach();
 
             // 範例十七
             //sample.ParallelInvoke();
